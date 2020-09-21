@@ -2,37 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
     <title>DO ZROBIENIA</title>
 </head>
 <body>
+
+
+
     <h1>DO ZROBIENIA</h1>
 
     <form action="/add" method="post">
         <div>
-            <label for="title">Zadanie do wykonania</label>
-            <input type="text" name="title" placeholder="Wpisz tytuł">
-            <label for="descript">Opis zadania</label>
-            <textarea name="descript" rows="4" cols="50"></textarea>
-            <button type="submit">Dodaj</button>
+            <label for="title">Zadanie do wykonania</label> <br>
+            <input id="wpisz_tytul " type="text" name="title" placeholder="Wpisz tytuł">
+        <div>
+            <label id="wpisz_opis" for="descript">Opis zadania</label> <br>
+            <textarea name="descript" rows="4" cols="50" placeholder="Opis zadania..."></textarea>
+        </div>
+            <button id="button_dodaj" type="submit">Dodaj</button>
         </div>
     </form>
 
+    <div id="content">
     {% for task in todo_list %}
-        <p> {{task.id}}. {{task.title}} <br> {{task.description}} </p>
+        <h3>{{task.id}}. {{task.title}} </h3>
+        <hr>
+        <p> {{task.description}}</p>
+    </div>
+
 
         {% if task.complete == False %}
-            <span>Do zrobienia</span>
+            <span id="niegotowe">Do zrobienia</span>
         {% else %}
-            <span>Zrobione</span>
+            <span id="gotowe">Zrobione</span>
         {% endif %}
 
-        <a href="/update/{{task.id}}">Zmień status</a>
-        <a href="/delete/{{task.id}}">Skasuj</a>
+        <a id="status" href="/update/{{task.id}}">Zmień status</a>
+        <a id ="delete" href="/delete/{{task.id}}">Skasuj</a>
 
 
     {% endfor %}
-
-
 
 </body>
 </html>

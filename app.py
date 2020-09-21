@@ -24,7 +24,7 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-    # dodaj nowe zadanie
+    #  dodaj nowe zadanie
     new_title = request.form.get("title")
     new_description = request.form.get("descript")
     new_task = Task(title=new_title, description=new_description, complete=False)
@@ -44,7 +44,7 @@ def update(task_id):
 
 @app.route("/delete/<int:task_id>")
 def delete(task_id):
-    # zaktualizuje zadanie
+    # usuń zadanie
     task = Task.query.filter_by(id=task_id).first()
     db.session.delete(task)
     db.session.commit()
