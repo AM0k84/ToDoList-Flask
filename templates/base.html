@@ -23,10 +23,10 @@
         </div>
     </form>
 
-    <div id="content">
+    <div>
     {% for task in todo_list %}
         <h3>{{task.id}}. {{task.title}} </h3>
-        <hr>
+        <hr class="new">
         <p> {{task.description}}</p>
     </div>
 
@@ -36,9 +36,9 @@
         {% else %}
             <span id="gotowe">Zrobione</span>
         {% endif %}
-
-        <a id="status" href="/update/{{task.id}}">Zmień status</a>
         <a id ="delete" href="/delete/{{task.id}}">Skasuj</a>
+        <a id="status" href="/update/{{task.id}}">Zmień status</a>
+
 
 
     {% endfor %}

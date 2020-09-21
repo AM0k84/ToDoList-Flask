@@ -59,8 +59,80 @@ button {
   border-radius: 4px;
   cursor: pointer;
   width: 50%;
+  margin-bottom: 85px;
 }
 
 button:hover {
   background-color: #45a049;
 }
+
+/* wygląd taska */
+
+
+h3, p {
+    margin-left: 260px;
+    margin-right: 260px;
+    padding: 20px;
+    background: white;
+    color: black;
+    text-align: left;
+}
+
+hr.new {
+    margin-left: 260px;
+    margin-right: 260px;
+    border:2px solid #e7e7e7;;
+}
+
+/* buttony */
+
+#niegotowe {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 260px;
+  margin-bottom: 35px;
+}
+
+#gotowe {
+  background-color: #4CAF50;;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 260px;
+  margin-bottom: 35px;
+}
+
+#status {
+    float: right;
+    background-color: #008CBA;;
+    color: black;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#delete {
+    float: right;
+     margin-right: 260px;
+    background-color: #e7e7e7;;
+    color: black;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
