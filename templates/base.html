@@ -10,10 +10,25 @@
     <form action="">
         <div>
             <label for="title">Zadanie do wykonania</label>
-            <input type="text" name="title" placeholder="Wpisz tutaj">
+            <input type="text" name="title" placeholder="Wpisz tytuł">
+
+            <label for="desc">Opis zadania</label>
+            <textarea name="descript" rows="4" cols="50"></textarea>
             <button type="submit">Dodaj</button>
         </div>
     </form>
+
+    {% for task in todo_list %}
+        <p> {{task.id}} | {{task.title}} <br> {{task.description}} </p>
+
+        {% if task.complete == False %}
+            <span>DO ZROBIENIA</span>
+        {% else %}
+            <span>ZROBIONE</span>
+        {% endif %}
+    {% endfor %}
+
+
 
 </body>
 </html>

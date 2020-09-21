@@ -6,9 +6,17 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    description = db.Column(db.String(200))
+    complete = db.Column(db.Boolean)
+
 @app.route("/")
 def index():
-    return render_template('base.html')
+    #  pokaż wszystkie zadania
+    todo_list = Task.query.all()
+    return render_template('base.html', todo_list=todo_list)
 
 
 
